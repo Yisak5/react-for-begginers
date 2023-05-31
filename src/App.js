@@ -6,10 +6,23 @@ function App() {
   const [keyword, setKeyword] = useState("");
   const onClick = () => setValue((prev) => prev + 1);
   const onChange = (event) => setKeyword(event.target.value);
-  console.log("run~~");
+  
   useEffect(() => {
     console.log("API 호출");
   }, []);
+
+  useEffect(() => {
+    console.log("KEYWORD CHAGNE", keyword);
+  }, [keyword]);
+
+  useEffect(() => {
+    console.log("COUNTER CHANGE", counter);
+  }, [counter]);
+
+  useEffect(() => {
+    console.log("KEYWORD, COUNTER CHANGE");
+  }, [counter, keyword]);
+
   return (
     <div>
       <input 
